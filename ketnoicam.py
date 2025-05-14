@@ -14,6 +14,5 @@ while True:
         cv2.putText(image,"Nguoi",(x,y),cv2.FONT_ITALIC,0.5,(0,0,255))   # viet chu  vao khung
 
     cv2.imshow("video",image)
-    
     if cv2.waitKey(1) == ord('q'):
         break
