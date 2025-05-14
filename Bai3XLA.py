@@ -3,8 +3,6 @@ import numpy as np
 
 img = cv2.VideoCapture(0)
 
-
-
 def xacdinhkhoi(image):
     
     #CHUYEN VE DEN TRANG
@@ -13,7 +11,7 @@ def xacdinhkhoi(image):
     image_blurred = cv2.GaussianBlur(image_gray,(3,3),0)
     cv2.imshow("blur",image_blurred)
     # phat hien canh trong anh
-    image_edges = cv2.Canny(image_blurred,50,150)
+    image_edges = cv2.Canny(image_blurred,30,100)
     cv2. imshow("edges",image_edges)
     #tim  cac diem duong vien
     contours,_ = cv2.findContours(image_edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
@@ -42,14 +40,21 @@ def xacdinhkhoi(image):
             shape = "Hinh Tron"
 
         #ve hinh doi tuong va hinh dang len anh goc
-        cv2.drawContours(image, [contour],-1,(0,255,0),2)
-        cv2.putText(image,shape,(approx[0][0][0],approx[0][0][1]-10),cv2.FONT_HERSHEY_SIMPLEX,0.3,(0,255,0),2)
+        cv2.drawContours(image, [contour],-1,(255,0,0),1)
+        cv2.putText(image,shape,(approx[0][0][0],approx[0][0][1]-10),cv2.FONT_HERSHEY_SIMPLEX,0.4,(255,0,0),1)
 
-        
-
+i = 0     
+print("nhan 'q' de thoat")
 while True:
     _,image = img.read()
-    xacdinhkhoi(image)
+    #xacdinhkhoi(image)
     cv2.imshow("",image)
     if cv2.waitKey(1) == ord('q'):
         break
+    elif cv2.waitKey(1) == ord('c'):
+        name_file = "picture" + str(i) + ".jpg"
+        cv2.imwrite(name_file, image)
+        picture = cv2.imread(name_file)
+        xacdinhkhoi(picture)
+        cv2.imshow("nhandang", picture)
+        i += 1
