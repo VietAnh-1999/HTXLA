@@ -1,0 +1,5 @@
+train: D:/5.HT/HTVAXLA/dataset/images/train"
+val: D:/5.HT/HTVAXLA/dataset/images/val" 
+
+nc: 2  # Số lớp
+names: ['KhungN', 'TaiN']

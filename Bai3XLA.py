@@ -54,7 +54,7 @@ while True:
     elif cv2.waitKey(1) == ord('c'):
         name_file = "picture" + str(i) + ".jpg"
         cv2.imwrite(name_file, image)
-        picture = cv2.imread(name_file)
-        xacdinhkhoi(picture)
-        cv2.imshow("nhandang", picture)
+        # picture = cv2.imread(name_file)
+        # xacdinhkhoi(picture)
+        # cv2.imshow("nhandang", picture)
         i += 1
