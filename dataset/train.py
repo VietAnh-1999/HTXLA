@@ -10,11 +10,11 @@ import wandb
 # Tải mô hình YOLOv8n (lightweight)
 #model = YOLO("yolov8n.pt")
 # Nếu muốn tiếp tục huấn luyện từ lần huấn luyện trước:
-model = YOLO(r"D:\5.HT\HTVAXLA\dataset\last.pt")
+model = YOLO(r"D:\12.python\HT\HTXLA\dataset\last.pt")
 
 # Bắt đầu huấn luyện
 model.train(
-    data= "D:/5.HT/HTVAXLA/dataset/data.yaml",
+    data= "D:/12.python/HT/HTXLA/dataset/data.yaml",
     epochs=50,
     imgsz=640,
     batch=16,

@@ -1,5 +1,5 @@
-train: D:/5.HT/HTVAXLA/dataset/train/images
-val: D:/5.HT/HTVAXLA/dataset/val/images
+train: D:/12.python/HT/HTXLA/dataset/train/images
+val: D:/12.python/HT/HTXLA/dataset/val/images
 
 nc: 2
 names: ['KhunN', 'TaiN']
